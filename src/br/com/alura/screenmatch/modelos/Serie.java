@@ -7,6 +7,10 @@ public class Serie extends Titulo {
     private int episodiosPorTemporadas;
     private int minutosPorEpisodio;
 
+    public Serie(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
+    }
+
     public boolean isAtiva() {
         return ativa;
     }
@@ -40,7 +44,11 @@ public class Serie extends Titulo {
     }
 
     @Override  // boa pratica manter essa sobrescrita de metodo
-    public int getDuracaoEmMinutos() {
-        return temporadas * episodiosPorTemporadas * minutosPorEpisodio;
+    public int getDuracaoEmMinutos() {return temporadas * episodiosPorTemporadas * minutosPorEpisodio;
+    }
+
+    @Override
+    public String toString() {
+        return "Série: " + this.getNome() + "(" + this.getAnoDeLancamento() + ")";
     }
 }
